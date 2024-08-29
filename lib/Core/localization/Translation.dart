@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 
 class Mytranslation extends Translations {
   @override
-  // TODO: implement keys
   Map<String, Map<String, String>> get keys => {
         "ar": {
           "1":
@@ -19,6 +18,10 @@ class Mytranslation extends Translations {
           "11": "حفظ",
           "12": "الجمبع",
           "13": "مهام",
+          "14": "المهام ذي الاولويه",
+          "15": "الاعدادات",
+          "16": "الرزنامه",
+          "17": "خاصتي",
         },
         "en": {
           "1":
@@ -35,6 +38,10 @@ class Mytranslation extends Translations {
           "11": "Save",
           "12": "All",
           "13": "Task",
+          "14": "star Tasks",
+          "15": "Settings",
+          "16": "Calender",
+          "17": "Mine",
         },
       };
 }

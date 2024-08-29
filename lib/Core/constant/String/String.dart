@@ -18,4 +18,12 @@ class StringApp {
   static String all = '12'.tr;
 
   static String task = '13'.tr;
+
+  static String startasks = '14'.tr;
+
+  static String settings = '15'.tr;
+
+  static String calender = '16'.tr;
+
+  static String mine = '17'.tr;
 }

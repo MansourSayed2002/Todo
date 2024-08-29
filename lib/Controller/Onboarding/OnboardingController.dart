@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo/Core/services/Myservices.dart';
-import 'package:todo/view/screen/Home/HomeView.dart';
+import 'package:todo/view/screen/Home/HomescreenView.dart';
 
 abstract class AbsOnboardingcontroller extends GetxController {
   int currentindex = 0;
@@ -10,7 +10,7 @@ abstract class AbsOnboardingcontroller extends GetxController {
   Myservices myservices = Get.find();
 
   chageindex(index);
-  gotoHomePage();
+  gotoHomeScreenPage();
 }
 
 class Onboardingcontroller extends AbsOnboardingcontroller {
@@ -27,10 +27,10 @@ class Onboardingcontroller extends AbsOnboardingcontroller {
   }
 
   @override
-  gotoHomePage() {
+  gotoHomeScreenPage() {
     myservices.sharedPreferences.setString('step', '1');
     Get.offAll(
-      () => const Homeview(),
+      () => const Homescreenview(),
       transition: Transition.rightToLeft,
       duration: const Duration(milliseconds: 400),
     );

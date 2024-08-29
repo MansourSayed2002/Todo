@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:todo/Controller/Onboarding/OnboardingController.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
 
@@ -59,7 +58,7 @@ class ButtonGO extends GetView<Onboardingcontroller> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.gotoHomePage();
+        controller.gotoHomeScreenPage();
       },
       child: Container(
         width: 70.0.sp,

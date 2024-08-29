@@ -9,6 +9,12 @@ class TextStyleApp {
     color: Appcolors.white,
   );
 
+  static TextStyle black15blod = TextStyle(
+    fontSize: 15.0.sp,
+    fontWeight: FontWeight.bold,
+    color: Appcolors.black,
+  );
+
   static TextStyle white30blod = TextStyle(
     fontSize: 40.0.sp,
     fontWeight: FontWeight.bold,

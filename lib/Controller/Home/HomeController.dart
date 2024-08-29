@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:todo/Data/source/local/Sqflite.dart';
-import 'package:todo/view/screen/TaskAdd/TaskAdd.dart';
 
 abstract class AbsHomeController extends GetxController {
   SqlDb sqlDb = SqlDb();
@@ -8,9 +7,11 @@ abstract class AbsHomeController extends GetxController {
   List numb = [1, 2, 3, 4];
   DateTime dateTime = DateTime.now();
   bool checkboxvalue = false;
-  gototaskaddpage();
+
   getData();
+
   deleteTask(id, index);
+
   changecheckbox(id);
 }
 
@@ -18,17 +19,7 @@ class HomeController extends AbsHomeController {
   @override
   void onInit() {
     getData();
-
     super.onInit();
-  }
-
-  @override
-  gototaskaddpage() {
-    Get.to(
-      () => const TaskADDView(),
-      transition: Transition.downToUp,
-      duration: const Duration(milliseconds: 400),
-    );
   }
 
   @override

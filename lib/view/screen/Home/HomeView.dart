@@ -11,21 +11,10 @@ class Homeview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomeController controller = Get.put(HomeController());
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        splashColor: Appcolors.white,
-        backgroundColor: Appcolors.blue,
-        onPressed: () {
-          controller.gototaskaddpage();
-        },
-        child: const Icon(
-          Icons.add,
-          color: Appcolors.white,
-        ),
-      ),
+    Get.put(HomeController());
+    return const Scaffold(
       backgroundColor: Appcolors.blue,
-      body: const CustomBody(),
+      body: CustomBody(),
     );
   }
 }
