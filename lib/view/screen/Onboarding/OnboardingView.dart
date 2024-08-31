@@ -10,7 +10,7 @@ class Onboardingview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(Onboardingcontroller());
+    Get.find<Onboardingcontroller>();
     return Scaffold(
       backgroundColor: Appcolors.bluehorizon,
       body: SizedBox(

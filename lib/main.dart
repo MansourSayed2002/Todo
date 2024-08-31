@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:todo/Core/Class/Bindings/Bindings.dart';
 import 'package:todo/Core/constant/Routing/Routing.dart';
 import 'package:todo/Core/localization/Translation.dart';
 import 'package:todo/Core/localization/localization.dart';
@@ -22,11 +23,13 @@ class ToDoApp extends StatelessWidget {
         designSize: const Size(360, 800),
         builder: (_, child) {
           return GetMaterialApp(
+            // theme: ThemeData(fontFamily: 'Nerko_One'),
             debugShowCheckedModeBanner: false,
             locale: controller.language,
             translations: Mytranslation(),
             initialRoute: '/',
-            // home: const HomeScreentest(),
+            initialBinding: MyBindings(),
+            // home: const Test(),
             getPages: getPages,
           );
         });

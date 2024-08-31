@@ -5,32 +5,35 @@ import 'package:todo/Controller/Home/HomeScreenController.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
 import 'package:todo/view/widget/Home/CustomBottomNavigationBar.dart';
 import 'package:todo/view/widget/Home/CustomFloatingButton.dart';
+import 'package:todo/view/widget/Home/DrawerApp.dart';
 
 class Homescreenview extends StatelessWidget {
   const Homescreenview({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Homescreencontroller controller = Get.put(Homescreencontroller());
-    return AdvancedDrawer(
-        backdrop: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Appcolors.ntsc, Appcolors.bluehorizon]),
+    Get.find<Homescreencontroller>();
+    return GetBuilder<Homescreencontroller>(builder: (controller) {
+      return AdvancedDrawer(
+          backdrop: Container(
+            width: double.infinity,
+            height: double.infinity,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Appcolors.turquoise, Appcolors.bluehorizon]),
+            ),
           ),
-        ),
-        controller: controller.advancedDrawerController,
-        animationCurve: Curves.easeInOut,
-        animationDuration: const Duration(milliseconds: 300),
-        drawer: const Drawer(),
-        child: Scaffold(
-          floatingActionButton: const CustomFloatingButton(),
-          bottomNavigationBar: const CustomBottomNavigationBar(),
-          body: controller.screens.elementAt(controller.currentindex),
-        ));
+          controller: controller.advancedDrawerController,
+          animationCurve: Curves.easeInOut,
+          animationDuration: const Duration(milliseconds: 300),
+          drawer: const CustomDrawerApp(),
+          child: Scaffold(
+            floatingActionButton: const CustomFloatingButton(),
+            bottomNavigationBar: const CustomBottomNavigationBar(),
+            body: controller.screens.elementAt(controller.currentindex),
+          ));
+    });
   }
 }

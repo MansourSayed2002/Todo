@@ -17,11 +17,13 @@ class SqlDb {
     String databasepath = await getDatabasesPath();
     String path = join(databasepath, 'todo.db');
     Database mydb = await openDatabase(path,
-        onCreate: _onCreate, version: 3, onUpgrade: _onUpgrade);
+        onCreate: _onCreate, version: 5, onUpgrade: _onUpgrade);
     return mydb;
   }
 
-  _onUpgrade(Database db, int oldversion, int newversion) {}
+  _onUpgrade(Database db, int oldversion, int newversion) async {
+    print('onupgrade======================================');
+  }
 
   _onCreate(Database db, int version) async {
     await db.execute('''
@@ -34,6 +36,13 @@ class SqlDb {
     "done" TINYINT NOT NULL DEFAULT '0'
   )
  ''');
+    await db.execute('''
+  CREATE TABLE "category" (
+    "id" INTEGER  NOT NULL PRIMARY KEY  AUTOINCREMENT, 
+    "categ" TEXT NOT NULL DEFAULT 'empty',
+    "hide" TINYINT NOT NULL DEFAULT '0'
+  )
+  ''');
     print('oncreate======================================');
   }
 
@@ -59,5 +68,11 @@ class SqlDb {
     Database? mydb = await db;
     int response = await mydb!.delete(table, where: where);
     return response;
+  }
+
+  deletedatabases() async {
+    String databasepath = await getDatabasesPath();
+    String path = join(databasepath, 'todo.db');
+    return deleteDatabase(path);
   }
 }

@@ -11,7 +11,7 @@ class Homeview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomeController());
+    Get.find<HomeController>();
     return const Scaffold(
       backgroundColor: Appcolors.blue,
       body: CustomBody(),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo/Data/source/local/Sqflite.dart';
-import 'package:todo/view/screen/Home/HomeView.dart';
+import 'package:todo/view/screen/Home/HomescreenView.dart';
 
 abstract class AbsTaskaddController extends GetxController {
   late TextEditingController autosize;
   late TextEditingController note;
   //cat=>category
   late TextEditingController cat;
-  late DateTime dateTime;
+  late DateTime dateTime = DateTime.now();
   SqlDb sqlDb = SqlDb();
 
   showdate(context);
@@ -21,7 +21,6 @@ class Taskaddcontroller extends AbsTaskaddController {
     autosize = TextEditingController();
     note = TextEditingController();
     cat = TextEditingController();
-    dateTime = DateTime.now();
     super.onInit();
   }
 
@@ -47,14 +46,17 @@ class Taskaddcontroller extends AbsTaskaddController {
           hour: dateTime.hour,
           minute: dateTime.minute,
         ));
-    if (time == null) return;
-    dateTime = DateTime(
-      date.year,
-      date.month,
-      date.day,
-      time.hour,
-      time.minute,
-    );
+    if (time == null) {
+      dateTime = date;
+    } else {
+      dateTime = DateTime(
+        date.year,
+        date.month,
+        date.day,
+        time.hour,
+        time.minute,
+      );
+    }
     update();
   }
 
@@ -64,11 +66,11 @@ class Taskaddcontroller extends AbsTaskaddController {
       var response = await sqlDb.insertData('task', {
         "taskt": autosize.text,
         "note": note.text,
-        "date": "${dateTime.year}-${dateTime.month}-${dateTime.day}",
-        "time": "${dateTime.hour}:${dateTime.minute}:00.000"
+        "date": dateTime.toString().split(' ')[0],
+        "time": dateTime.toString().split(' ')[1],
       });
       if (response > 0) {
-        Get.offAll(() => const Homeview());
+        Get.offAll(const Homescreenview());
         Get.snackbar('Done', 'It was completed Add Task');
       }
     }

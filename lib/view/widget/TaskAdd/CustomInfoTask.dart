@@ -25,8 +25,8 @@ class CustomInfoTask extends StatelessWidget {
               children: [
                 Divider(
                   color: Appcolors.black,
-                  indent: 20.0.sp,
-                  endIndent: 20.0.sp,
+                  indent: 20.0.w,
+                  endIndent: 20.0.w,
                 ),
                 ListTile(
                   title: Text(
@@ -55,7 +55,7 @@ class CustomInfoTask extends StatelessWidget {
                       iconData: Icons.category_rounded,
                       title: StringApp.category,
                     )),
-                const CustomButtonCreate(),
+                const Flexible(child: CustomButtonCreate()),
               ],
             )),
       );

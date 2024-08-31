@@ -26,4 +26,8 @@ class StringApp {
   static String calender = '16'.tr;
 
   static String mine = '17'.tr;
+
+  static String startask = '18'.tr;
+
+  static String theme = '19'.tr;
 }

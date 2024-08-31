@@ -22,6 +22,8 @@ class Mytranslation extends Translations {
           "15": "الاعدادات",
           "16": "الرزنامه",
           "17": "خاصتي",
+          "18": "المهام ذوي الاولويه",
+          "19": "المظهر",
         },
         "en": {
           "1":
@@ -42,6 +44,8 @@ class Mytranslation extends Translations {
           "15": "Settings",
           "16": "Calender",
           "17": "Mine",
+          "18": "Star Task",
+          "19": "Theme",
         },
       };
 }

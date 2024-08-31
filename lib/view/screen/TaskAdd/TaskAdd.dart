@@ -12,7 +12,7 @@ class TaskADDView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(Taskaddcontroller());
+    Get.find<Taskaddcontroller>();
     return Scaffold(
       backgroundColor: Appcolors.clouds,
       appBar: AppBar(

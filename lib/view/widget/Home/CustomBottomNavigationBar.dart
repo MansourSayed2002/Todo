@@ -27,7 +27,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               onTap: () {
                 controller.changeindex(0);
               },
-              iconData: FluentIcons.star_emphasis_24_regular,
+              iconData: FluentIcons.task_list_add_20_filled,
               text: StringApp.task,
               index: 0,
             ),
@@ -48,6 +48,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
               index: 2,
             ),
             DrawerButton(
+              color: Appcolors.white,
               onPressed: () {
                 controller.advancedDrawerController.showDrawer();
               },
@@ -82,7 +83,7 @@ class CustombottomItemBar extends GetView<Homescreencontroller> {
           alignment: Alignment.center,
           padding: EdgeInsets.all(5.0.r),
           decoration: BoxDecoration(
-              color: controller.currentindex == index ? Appcolors.ntsc : null,
+              color: controller.currentindex == index ? Appcolors.nyc : null,
               borderRadius: BorderRadius.circular(20.0.r)),
           duration: const Duration(milliseconds: 300),
           child: Row(
@@ -90,6 +91,7 @@ class CustombottomItemBar extends GetView<Homescreencontroller> {
             children: [
               Icon(
                 iconData,
+                color: Appcolors.white,
               ),
               controller.currentindex == index
                   ? Text(
