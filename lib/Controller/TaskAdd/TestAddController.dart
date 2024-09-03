@@ -9,9 +9,11 @@ abstract class AbsTaskaddController extends GetxController {
   //cat=>category
   late TextEditingController cat;
   late DateTime dateTime = DateTime.now();
+  List catData = [];
   SqlDb sqlDb = SqlDb();
 
   showdate(context);
+  getdata();
   create();
 }
 
@@ -21,6 +23,7 @@ class Taskaddcontroller extends AbsTaskaddController {
     autosize = TextEditingController();
     note = TextEditingController();
     cat = TextEditingController();
+    getdata();
     super.onInit();
   }
 
@@ -74,5 +77,11 @@ class Taskaddcontroller extends AbsTaskaddController {
         Get.snackbar('Done', 'It was completed Add Task');
       }
     }
+  }
+
+  @override
+  getdata() {
+    catData = Get.arguments['catdata'];
+    print(catData);
   }
 }

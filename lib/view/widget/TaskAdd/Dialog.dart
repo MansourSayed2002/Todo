@@ -1,42 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
 import 'package:todo/Core/constant/String/String.dart';
+import 'package:todo/Core/constant/Textstyle/TextStyle.dart';
 
 class Dialo extends StatelessWidget {
   const Dialo({
     super.key,
-    required this.iconData,
+    required this.widget,
     required this.controller,
     required this.title,
+    required this.hint,
+    required this.onconfirm,
   });
-  final IconData iconData;
+  final Widget widget;
   final TextEditingController controller;
   final String title;
+  final String hint;
+  final VoidCallback onconfirm;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Get.defaultDialog(
-          title: StringApp.addnote,
-          content: TextFormField(
-            controller: controller,
-          ),
-          textCancel: StringApp.cancel,
-          textConfirm: StringApp.save,
-          onConfirm: () {
-            Get.back();
-            Get.snackbar('Done', 'Done Save');
-          },
-          onCancel: () {
-            controller.clear();
-          },
-        );
-      },
-      child: Icon(
-        iconData,
-        color: Appcolors.blue,
-      ),
-    );
+        onTap: () {
+          Get.defaultDialog(
+            title: title,
+            titleStyle: TextStyleApp.black18blod,
+            backgroundColor: Appcolors.white,
+            content: SizedBox(
+              width: 400.0.w,
+              child: TextFormField(
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.all(25.0.r),
+                  hintText: hint,
+                  filled: true,
+                  fillColor: Appcolors.clouds,
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+                controller: controller,
+              ),
+            ),
+            textCancel: StringApp.cancel,
+            textConfirm: StringApp.save,
+            onConfirm: onconfirm,
+            onCancel: () {
+              controller.clear();
+            },
+          );
+        },
+        child: widget);
   }
 }

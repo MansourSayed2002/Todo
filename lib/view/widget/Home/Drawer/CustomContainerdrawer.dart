@@ -9,8 +9,12 @@ class CustomContainerdrawer extends StatelessWidget {
     required this.iconData,
     required this.title,
     required this.ontap,
+    this.iconData2,
+    required this.sureicon2,
   });
   final IconData iconData;
+  final IconData? iconData2;
+  final bool sureicon2;
   final String title;
   final VoidCallback ontap;
   @override
@@ -18,10 +22,7 @@ class CustomContainerdrawer extends StatelessWidget {
     return InkWell(
       onTap: ontap,
       child: Container(
-        padding: EdgeInsets.only(
-          left: 30.0.r,
-        ),
-        height: 70.0.h,
+        padding: EdgeInsets.all(20.0.r),
         child: Row(
           children: [
             Icon(
@@ -35,6 +36,13 @@ class CustomContainerdrawer extends StatelessWidget {
               title,
               style: TextStyleApp.black18blod,
             ),
+            const Spacer(),
+            sureicon2 == true
+                ? Icon(
+                    iconData2,
+                    color: Appcolors.black,
+                  )
+                : const SizedBox(),
           ],
         ),
       ),

@@ -9,14 +9,14 @@ class TextStyleApp {
     color: Appcolors.white,
   );
 
-  static TextStyle black15blod = TextStyle(
+  static TextStyle white15blod = TextStyle(
     fontSize: 15.0.sp,
     fontWeight: FontWeight.bold,
     color: Appcolors.white,
   );
 
-  static TextStyle white30blod = TextStyle(
-    fontSize: 40.0.sp,
+  static TextStyle white25blod = TextStyle(
+    fontSize: 25.0.sp,
     fontWeight: FontWeight.bold,
     color: Appcolors.white,
   );
@@ -26,6 +26,11 @@ class TextStyleApp {
     color: Appcolors.black,
   );
 
+  static TextStyle black18normal = TextStyle(
+    fontSize: 18.0.sp,
+    fontWeight: FontWeight.normal,
+    color: Appcolors.black,
+  );
   static TextStyle black18blodthrough = TextStyle(
     fontSize: 18.0.sp,
     fontWeight: FontWeight.bold,
@@ -39,9 +44,14 @@ class TextStyleApp {
     color: Appcolors.black,
   );
 
-  static TextStyle desire13normal = TextStyle(
-    fontSize: 13.0.sp,
+  static TextStyle blue18normal = TextStyle(
+    fontSize: 18.0.sp,
     fontWeight: FontWeight.normal,
-    color: Appcolors.desire,
+    color: Appcolors.blue,
+  );
+  static TextStyle blue18normalopacity = TextStyle(
+    fontSize: 18.0.sp,
+    fontWeight: FontWeight.normal,
+    color: Appcolors.blue.withOpacity(.3),
   );
 }

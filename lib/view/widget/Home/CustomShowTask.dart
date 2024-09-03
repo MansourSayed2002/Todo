@@ -32,7 +32,7 @@ class CustomShowTask extends StatelessWidget {
               title: '${controller.dataTask[index]['taskt']}',
               id: controller.dataTask[index]['id'],
               onPressed: (p0) {
-                controller.deleteTask(controller.dataTask[index]['id'], index);
+                controller.deleteTask(controller.dataTask[index]['id']);
               },
             ),
           );

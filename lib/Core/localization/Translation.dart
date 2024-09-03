@@ -16,7 +16,7 @@ class Mytranslation extends Translations {
           "9": "قسم",
           "10": "انهاء",
           "11": "حفظ",
-          "12": "الجمبع",
+          "12": "اليوم",
           "13": "مهام",
           "14": "المهام ذي الاولويه",
           "15": "الاعدادات",
@@ -24,6 +24,9 @@ class Mytranslation extends Translations {
           "17": "خاصتي",
           "18": "المهام ذوي الاولويه",
           "19": "المظهر",
+          "20": "اضافه قسم",
+          "21": "اضافه قسم جديد",
+          "22": "ادخل هنا",
         },
         "en": {
           "1":
@@ -38,7 +41,7 @@ class Mytranslation extends Translations {
           "9": "Category",
           "10": "Cancel",
           "11": "Save",
-          "12": "All",
+          "12": "ToDay",
           "13": "Task",
           "14": "star Tasks",
           "15": "Settings",
@@ -46,6 +49,9 @@ class Mytranslation extends Translations {
           "17": "Mine",
           "18": "Star Task",
           "19": "Theme",
+          "20": "Create New",
+          "21": "Create New Category",
+          "22": "Input here",
         },
       };
 }

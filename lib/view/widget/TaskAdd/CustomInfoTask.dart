@@ -44,15 +44,31 @@ class CustomInfoTask extends StatelessWidget {
                 ListTile(
                     title: Text(StringApp.addnote),
                     leading: Dialo(
+                      hint: StringApp.inputhere,
                       controller: controller.note,
-                      iconData: Icons.note_alt_outlined,
+                      onconfirm: () {
+                        Get.back();
+                        Get.snackbar('Done', 'Done Save');
+                      },
+                      widget: const Icon(
+                        Icons.note_alt_outlined,
+                        color: Appcolors.blue,
+                      ),
                       title: StringApp.addnote,
                     )),
                 ListTile(
                     title: Text(StringApp.category),
                     leading: Dialo(
+                      onconfirm: () {
+                        Get.back();
+                        Get.snackbar('Done', 'Done Save');
+                      },
+                      hint: StringApp.inputhere,
                       controller: controller.cat,
-                      iconData: Icons.category_rounded,
+                      widget: const Icon(
+                        Icons.category_rounded,
+                        color: Appcolors.blue,
+                      ),
                       title: StringApp.category,
                     )),
                 const Flexible(child: CustomButtonCreate()),

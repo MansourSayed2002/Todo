@@ -30,4 +30,10 @@ class StringApp {
   static String startask = '18'.tr;
 
   static String theme = '19'.tr;
+
+  static String createnew = '20'.tr;
+
+  static String createnewcategory = '21'.tr;
+
+  static String inputhere = '22'.tr;
 }

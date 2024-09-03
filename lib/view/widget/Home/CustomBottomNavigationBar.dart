@@ -96,7 +96,7 @@ class CustombottomItemBar extends GetView<Homescreencontroller> {
               controller.currentindex == index
                   ? Text(
                       text,
-                      style: TextStyleApp.black15blod,
+                      style: TextStyleApp.white15blod,
                     )
                   : const SizedBox(),
             ],

@@ -16,7 +16,7 @@ class CustomPartInfo extends StatelessWidget {
     return Container(
       padding: EdgeInsets.only(
         left: 40.0.sp,
-        right:40.0.sp,
+        right: 40.0.sp,
       ),
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height / 3,
@@ -39,7 +39,7 @@ class CustomPartInfo extends StatelessWidget {
           ),
           Text(
             StringApp.all,
-            style: TextStyleApp.white30blod,
+            style: TextStyleApp.white25blod,
           ),
           GetBuilder<HomeController>(
             builder: (controller) => Text(

@@ -10,7 +10,7 @@ abstract class AbsHomeController extends GetxController {
 
   getData();
 
-  deleteTask(id, index);
+  deleteTask(id);
 
   changecheckbox(id);
 }
@@ -33,7 +33,7 @@ class HomeController extends AbsHomeController {
   }
 
   @override
-  deleteTask(id, index) async {
+  deleteTask(id) async {
     var response = await sqlDb.deleteData('task', "`id`='$id'");
     if (response > 0) {
       Get.snackbar("Delete", "It was completed Delete Task");
