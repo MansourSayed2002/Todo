@@ -27,7 +27,7 @@ class StringApp {
 
   static String mine = '17'.tr;
 
-  static String startask = '18'.tr;
+  static String addnewtaskhere = '18'.tr;
 
   static String theme = '19'.tr;
 
@@ -36,4 +36,6 @@ class StringApp {
   static String createnewcategory = '21'.tr;
 
   static String inputhere = '22'.tr;
+
+  static String note = '23'.tr;
 }

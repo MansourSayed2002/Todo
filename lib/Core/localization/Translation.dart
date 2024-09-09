@@ -22,11 +22,12 @@ class Mytranslation extends Translations {
           "15": "الاعدادات",
           "16": "الرزنامه",
           "17": "خاصتي",
-          "18": "المهام ذوي الاولويه",
+          "18": "اضافه مهمه جديده هنا",
           "19": "المظهر",
           "20": "اضافه قسم",
           "21": "اضافه قسم جديد",
           "22": "ادخل هنا",
+          "23": "ملاحظه",
         },
         "en": {
           "1":
@@ -43,15 +44,16 @@ class Mytranslation extends Translations {
           "11": "Save",
           "12": "ToDay",
           "13": "Task",
-          "14": "star Tasks",
+          "14": "Star Tasks",
           "15": "Settings",
           "16": "Calender",
           "17": "Mine",
-          "18": "Star Task",
+          "18": 'add new task here',
           "19": "Theme",
           "20": "Create New",
           "21": "Create New Category",
           "22": "Input here",
+          "23": "Note",
         },
       };
 }

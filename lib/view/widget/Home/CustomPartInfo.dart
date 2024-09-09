@@ -33,7 +33,7 @@ class CustomPartInfo extends StatelessWidget {
             ),
             child: Icon(
               Icons.list_alt_rounded,
-              color: Appcolors.blue,
+              color: Appcolors.turquoise,
               size: 35.0.sp,
             ),
           ),
@@ -43,7 +43,7 @@ class CustomPartInfo extends StatelessWidget {
           ),
           GetBuilder<HomeController>(
             builder: (controller) => Text(
-              '${controller.dataTask.length} Task',
+              '${controller.dataTask.length} ${StringApp.task} ',
               style: TextStyleApp.white20blod,
             ),
           ),

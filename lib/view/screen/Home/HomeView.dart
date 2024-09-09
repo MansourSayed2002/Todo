@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:todo/Controller/Home/HomeController.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
+import 'package:todo/view/widget/Home/CustomFloatingButton.dart';
 import 'package:todo/view/widget/Home/CustomPartInfo.dart';
 import 'package:todo/view/widget/Home/CustomShowTask.dart';
 
@@ -13,7 +13,8 @@ class Homeview extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.find<HomeController>();
     return const Scaffold(
-      backgroundColor: Appcolors.blue,
+      floatingActionButton: CustomFloatingButton(),
+      backgroundColor: Appcolors.turquoise,
       body: CustomBody(),
     );
   }

@@ -42,14 +42,14 @@ class CustomContainerAllCategory extends StatelessWidget {
                               width: 20.0.w,
                             ),
                             Text(
-                              controller.catData[index]['categ'],
+                              controller.catData[index]['c_categ'],
                               style: TextStyleApp.black18normal,
                             ),
                             const Spacer(),
                             InkWell(
                               onTap: () {
-                                controller
-                                    .deletecat(controller.catData[index]['id']);
+                                controller.deletecat(
+                                    controller.catData[index]['c_id']);
                               },
                               child: Icon(
                                 Icons.delete_forever_outlined,
@@ -62,7 +62,7 @@ class CustomContainerAllCategory extends StatelessWidget {
                       ),
                     ),
                     Dialo(
-                      controller: controller.cat,
+                      controller: controller.category,
                       hint: StringApp.inputhere,
                       title: StringApp.createnewcategory,
                       onconfirm: () {

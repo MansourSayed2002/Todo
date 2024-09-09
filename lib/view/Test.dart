@@ -7,7 +7,7 @@ class Test extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SqlDb sqlDb = SqlDb();
+    SqlDb sqlDb = SqlDb.instance;
     return Scaffold(
       body: Center(
         child: ElevatedButton(

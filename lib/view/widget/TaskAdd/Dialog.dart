@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
 import 'package:todo/Core/constant/String/String.dart';
 import 'package:todo/Core/constant/Textstyle/TextStyle.dart';
+import 'package:todo/Core/shared/TextFormFieldGlobal.dart';
 
 class Dialo extends StatelessWidget {
   const Dialo({
@@ -28,20 +29,12 @@ class Dialo extends StatelessWidget {
             titleStyle: TextStyleApp.black18blod,
             backgroundColor: Appcolors.white,
             content: SizedBox(
-              width: 400.0.w,
-              child: TextFormField(
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(25.0.r),
-                  hintText: hint,
-                  filled: true,
-                  fillColor: Appcolors.clouds,
-                  border: const OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                  ),
-                ),
-                controller: controller,
-              ),
-            ),
+                width: 400.0.w,
+                child: Textformfieldglobal(
+                  hint: hint,
+                  fillcolor: Appcolors.clouds,
+                  controller: controller,
+                )),
             textCancel: StringApp.cancel,
             textConfirm: StringApp.save,
             onConfirm: onconfirm,

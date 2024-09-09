@@ -4,7 +4,6 @@ import 'package:todo/Core/Class/middleware/middleware.dart';
 import 'package:todo/view/screen/Home/HomeView.dart';
 import 'package:todo/view/screen/Home/HomescreenView.dart';
 import 'package:todo/view/screen/Onboarding/OnboardingView.dart';
-import 'package:todo/view/screen/TaskAdd/TaskAdd.dart';
 
 List<GetPage<dynamic>>? getPages = [
   GetPage(
@@ -14,7 +13,7 @@ List<GetPage<dynamic>>? getPages = [
       MyMiddleware(),
     ],
   ),
-  GetPage(name: AppRoute.taskaddview, page: () => const TaskADDView()),
+  // GetPage(name: AppRoute.taskaddview, page: () => const TaskADDView()),
   GetPage(name: AppRoute.homeview, page: () => const Homeview()),
   GetPage(name: AppRoute.homeScreenview, page: () => const Homescreenview()),
 ];

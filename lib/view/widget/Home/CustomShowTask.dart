@@ -15,6 +15,7 @@ class CustomShowTask extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
+        width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.all(10.0.sp),
         margin: EdgeInsets.only(top: 20.0.sp),
         decoration: BoxDecoration(
@@ -25,15 +26,21 @@ class CustomShowTask extends StatelessWidget {
           ),
         ),
         child: GetBuilder<HomeController>(builder: (controller) {
-          return ListView.builder(
-            itemCount: controller.dataTask.length,
-            itemBuilder: (context, index) => CustomCardTask(
-              subtitle: '${controller.dataTask[index]['note']}',
-              title: '${controller.dataTask[index]['taskt']}',
-              id: controller.dataTask[index]['id'],
-              onPressed: (p0) {
-                controller.deleteTask(controller.dataTask[index]['id']);
-              },
+          return Column(
+            children: List.generate(
+              controller.dataTask.length,
+              (index) => CustomCardTask(
+                indexs: index,
+                subtitle: '${controller.dataTask[index]['t_note']}',
+                title: '${controller.dataTask[index]['t_taskt']}',
+                onPressed: (p0) {
+                  controller.deleteTask(controller.dataTask[index]['t_id']);
+                },
+                onPressed2: (p0) {
+                  controller
+                      .addtasktostartask(controller.dataTask[index]['t_id']);
+                },
+              ),
             ),
           );
         }),
@@ -48,42 +55,54 @@ class CustomCardTask extends StatelessWidget {
     required this.subtitle,
     required this.title,
     required this.onPressed,
-    required this.id,
+    required this.onPressed2,
+    required this.indexs,
   });
   final String title;
   final String subtitle;
   final void Function(BuildContext)? onPressed;
-  final int id;
+  final void Function(BuildContext)? onPressed2;
+
+  final int indexs;
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
       builder: (controller) => SlideableWidgetGlobal(
+        onPressed2: onPressed2,
         onPressed: onPressed,
         widget: Container(
-          margin: EdgeInsets.all(10.0.sp),
-          width: MediaQuery.of(context).size.width,
-          height: 60.0.sp,
-          child: CheckboxListTile(
-            onChanged: (value) {
-              controller.changecheckbox(id);
-            },
-            value: controller.checkboxvalue,
-            title: Text(
-              title,
-              style: controller.checkboxvalue == true
-                  ? TextStyleApp.black18blodthrough
-                  : TextStyleApp.black18blod,
-            ),
-            subtitle: Text(
-              subtitle,
-              style: controller.checkboxvalue == true
-                  ? TextStyleApp.black18blodthrough
-                  : TextStyleApp.black18blod,
-            ),
-          ),
-        ),
+            margin: EdgeInsets.all(10.0.sp),
+            width: MediaQuery.of(context).size.width,
+            height: 60.0.sp,
+            child: CheckboxListTile(
+              value: controller.dataTask[indexs]["t_done"] == 0 ? false : true,
+              onChanged: (value) {
+                controller.changecheckbox(
+                    controller.dataTask[indexs]["t_id"], indexs);
+              },
+              title: Text(
+                title,
+                style: controller.dataTask[indexs]['t_done'] == 1
+                    ? TextStyleApp.black18blodthrough
+                    : TextStyleApp.black18blod,
+              ),
+              subtitle: Text(
+                subtitle,
+                style: controller.dataTask[indexs]['t_done'] == 1
+                    ? TextStyleApp.black18blodthrough
+                    : TextStyleApp.black18blod,
+              ),
+            )),
       ),
     );
   }
 }
+
+
+//  CheckboxListTile(
+//             onChanged = (value) {
+             
+//             value: ,
+//            
+//           ),

@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:todo/Controller/Home/HomeScreenController.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
 import 'package:todo/view/widget/Home/CustomBottomNavigationBar.dart';
-import 'package:todo/view/widget/Home/CustomFloatingButton.dart';
 import 'package:todo/view/widget/Home/Drawer/DrawerApp.dart';
 
 class Homescreenview extends StatelessWidget {
@@ -30,7 +29,6 @@ class Homescreenview extends StatelessWidget {
           animationDuration: const Duration(milliseconds: 300),
           drawer: const CustomDrawerApp(),
           child: Scaffold(
-            floatingActionButton: const CustomFloatingButton(),
             bottomNavigationBar: const CustomBottomNavigationBar(),
             body: controller.screens.elementAt(controller.currentindex),
           ));

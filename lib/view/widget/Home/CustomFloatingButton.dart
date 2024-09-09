@@ -3,20 +3,19 @@ import 'package:get/get.dart';
 import 'package:todo/Controller/Home/HomeScreenController.dart';
 
 import 'package:todo/Core/constant/Colors/Colors.dart';
+import 'package:todo/view/screen/TaskAdd/TaskADDSheet.dart';
 
 class CustomFloatingButton extends GetView<Homescreencontroller> {
   const CustomFloatingButton({
     super.key,
   });
-
-  @override
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
       splashColor: Appcolors.white,
-      backgroundColor: Appcolors.blue,
+      backgroundColor: Appcolors.nyc,
       onPressed: () {
-        controller.gototaskaddpage();
+        Get.bottomSheet(const TaskADDSheet());
       },
       child: const Icon(
         Icons.add,

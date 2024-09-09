@@ -2,6 +2,10 @@ import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 class SqlDb {
+  SqlDb._();
+
+  static final SqlDb instance = SqlDb._();
+
   static Database? _db;
 
   Future<Database?> get db async {
@@ -17,7 +21,7 @@ class SqlDb {
     String databasepath = await getDatabasesPath();
     String path = join(databasepath, 'todo.db');
     Database mydb = await openDatabase(path,
-        onCreate: _onCreate, version: 5, onUpgrade: _onUpgrade);
+        onCreate: _onCreate, version: 1, onUpgrade: _onUpgrade);
     return mydb;
   }
 
@@ -28,19 +32,27 @@ class SqlDb {
   _onCreate(Database db, int version) async {
     await db.execute('''
   CREATE TABLE "task" (
-    "id" INTEGER  NOT NULL PRIMARY KEY  AUTOINCREMENT, 
-    "taskt" TEXT NOT NULL,
-    "note" TEXT NOT NULL DEFAULT 'empty',
-    "date" DATE NOT NULL,
-    "time" DATETIME NOT NULL,
-    "done" TINYINT NOT NULL DEFAULT '0'
+    "t_id" INTEGER  NOT NULL PRIMARY KEY  AUTOINCREMENT, 
+    "t_taskt" TEXT NOT NULL,
+    "t_note" TEXT NOT NULL DEFAULT 'empty',
+    "t_date" DATE NOT NULL,
+    "t_time" DATETIME NOT NULL,
+    "t_done" TINYINT NOT NULL DEFAULT '0',
+    "t_categ" INTEGER NOT NULL
   )
  ''');
     await db.execute('''
   CREATE TABLE "category" (
-    "id" INTEGER  NOT NULL PRIMARY KEY  AUTOINCREMENT, 
-    "categ" TEXT NOT NULL DEFAULT 'empty',
-    "hide" TINYINT NOT NULL DEFAULT '0'
+    "c_id" INTEGER  NOT NULL PRIMARY KEY  AUTOINCREMENT, 
+    "c_categ" TEXT NOT NULL DEFAULT 'empty',
+    "c_hide" TINYINT NOT NULL DEFAULT '0'
+  )
+  ''');
+    await db.execute('''
+  CREATE TABLE "startask" (
+    "s_id" INTEGER  NOT NULL PRIMARY KEY  AUTOINCREMENT, 
+    "s_idtask" INTEGER NOT NULL,
+    FOREIGN KEY (s_idtask) REFERENCES task(t_id)
   )
   ''');
     print('oncreate======================================');
@@ -49,6 +61,12 @@ class SqlDb {
   readData(String table, String? where) async {
     Database? mydb = await db;
     List<Map> response = await mydb!.query(table, where: where);
+    return response;
+  }
+
+  rawreadData(String sql) async {
+    Database? mydb = await db;
+    List<Map> response = await mydb!.rawQuery(sql);
     return response;
   }
 

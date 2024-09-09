@@ -1,11 +1,13 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:todo/Controller/Home/HomeScreenController.dart';
 import 'package:todo/Core/constant/String/String.dart';
 import 'package:todo/view/widget/Home/Drawer/CustomContainerAllCategory.dart';
 import 'package:todo/view/widget/Home/Drawer/CustomContainerdrawer.dart';
 
-class CustomDrawerApp extends StatelessWidget {
+class CustomDrawerApp extends GetView<Homescreencontroller> {
   const CustomDrawerApp({super.key});
 
   @override
@@ -31,9 +33,11 @@ class CustomDrawerApp extends StatelessWidget {
                 children: [
                   CustomContainerdrawer(
                     sureicon2: false,
-                    ontap: () {},
+                    ontap: () {
+                      controller.gotostartaskpage();
+                    },
                     iconData: FluentIcons.star_12_filled,
-                    title: StringApp.startask,
+                    title: StringApp.startasks,
                   ),
                   const CustomContainerAllCategory(),
                   CustomContainerdrawer(
