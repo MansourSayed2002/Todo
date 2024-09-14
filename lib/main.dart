@@ -23,7 +23,10 @@ class ToDoApp extends StatelessWidget {
         designSize: const Size(360, 800),
         builder: (_, child) {
           return GetMaterialApp(
-            // theme: ThemeData(fontFamily: 'Nerko_One'),
+            theme: ThemeData(
+              useMaterial3: true,
+              fontFamily: 'Nerko_One',
+            ),
             debugShowCheckedModeBanner: false,
             locale: controller.language,
             translations: Mytranslation(),

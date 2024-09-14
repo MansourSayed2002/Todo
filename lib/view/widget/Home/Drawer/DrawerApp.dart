@@ -50,7 +50,7 @@ class CustomDrawerApp extends GetView<Homescreencontroller> {
                     sureicon2: false,
                     ontap: () {},
                     iconData: FluentIcons.settings_16_filled,
-                    title: StringApp.settings,
+                    title: StringApp.languages,
                   ),
                 ],
               ),

@@ -21,7 +21,7 @@ class StringApp {
 
   static String startasks = '14'.tr;
 
-  static String settings = '15'.tr;
+  static String languages = '15'.tr;
 
   static String calender = '16'.tr;
 
