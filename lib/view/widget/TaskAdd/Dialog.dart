@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
-import 'package:todo/Core/constant/String/String.dart';
 import 'package:todo/Core/constant/Textstyle/TextStyle.dart';
 import 'package:todo/Core/shared/TextFormFieldGlobal.dart';
 
@@ -35,8 +34,8 @@ class Dialo extends StatelessWidget {
                   fillcolor: Appcolors.clouds,
                   controller: controller,
                 )),
-            textCancel: StringApp.cancel,
-            textConfirm: StringApp.save,
+            textCancel: '10'.tr,
+            textConfirm: '11'.tr,
             onConfirm: onconfirm,
             onCancel: () {
               controller.clear();

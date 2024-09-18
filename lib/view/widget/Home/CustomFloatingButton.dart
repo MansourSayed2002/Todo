@@ -15,6 +15,7 @@ class CustomFloatingButton extends GetView<Homescreencontroller> {
       splashColor: Appcolors.white,
       backgroundColor: Appcolors.nyc,
       onPressed: () {
+        print(Get.deviceLocale);
         Get.bottomSheet(const TaskADDSheet());
       },
       child: const Icon(

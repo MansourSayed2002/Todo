@@ -1,4 +1,4 @@
-class APpImage {
+class APPImage {
   static const String welcome = 'assets/Lottie/Animation - 1724169825633.gif';
 
   static const String board3 = 'assets/Lottie/Animation - 1724169326863.gif';
@@ -8,4 +8,6 @@ class APpImage {
   static const String noData = 'assets/Lottie/Animation - 1724170809761.gif';
 
   static const String loading = 'assets/Lottie/Animation - 1724170904994.gif';
+
+  static const String todo = 'assets/Images/To DO.png';
 }

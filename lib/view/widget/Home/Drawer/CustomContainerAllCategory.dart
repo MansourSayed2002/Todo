@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:todo/Controller/Home/HomeScreenController.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
-import 'package:todo/Core/constant/String/String.dart';
 import 'package:todo/Core/constant/Textstyle/TextStyle.dart';
 import 'package:todo/view/widget/Home/Drawer/CustomContainerdrawer.dart';
 import 'package:todo/view/widget/TaskAdd/Dialog.dart';
@@ -23,7 +22,7 @@ class CustomContainerAllCategory extends StatelessWidget {
             iconData2: Icons.arrow_drop_down_sharp,
             ontap: () => controller.chagecheck(),
             iconData: Icons.category,
-            title: StringApp.category,
+            title: '9'.tr,
           ),
           controller.check == true
               ? Column(
@@ -63,8 +62,8 @@ class CustomContainerAllCategory extends StatelessWidget {
                     ),
                     Dialo(
                       controller: controller.category,
-                      hint: StringApp.inputhere,
-                      title: StringApp.createnewcategory,
+                      hint: '22'.tr,
+                      title: '21'.tr,
                       onconfirm: () {
                         controller.addDatacat();
                       },
@@ -80,7 +79,7 @@ class CustomContainerAllCategory extends StatelessWidget {
                               width: 20.0.w,
                             ),
                             Text(
-                              StringApp.createnew,
+                              '20'.tr,
                               style: TextStyleApp.black18blod,
                             ),
                           ],

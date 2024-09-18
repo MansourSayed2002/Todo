@@ -8,8 +8,8 @@ class Mylocalization extends GetxController {
   Myservices myservices = Get.find();
 
   changelang(languageCode) {
-    myservices.sharedPreferences.setString('lang', languageCode);
     Locale loc = Locale(languageCode);
+    myservices.sharedPreferences.setString('lang', languageCode);
     Get.updateLocale(loc);
   }
 

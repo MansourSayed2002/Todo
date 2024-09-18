@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:todo/Controller/Home/HomeScreenController.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
-import 'package:todo/Core/constant/String/String.dart';
+
 import 'package:todo/Core/shared/TextFormFieldGlobal.dart';
 import 'package:todo/view/widget/TaskAdd/CustomButtonCreate.dart';
 import 'package:todo/view/widget/TaskAdd/Dialog.dart';
@@ -27,7 +27,7 @@ class TaskADDSheet extends GetView<Homescreencontroller> {
       child: Column(
         children: [
           Textformfieldglobal(
-            hint: StringApp.addnewtaskhere,
+            hint: '18'.tr,
             fillcolor: Appcolors.clouds,
             controller: controller.formtast,
           ),
@@ -66,11 +66,11 @@ class CustomIconbottoms extends GetView<Homescreencontroller> {
         ),
         Dialo(
           controller: controller.note,
-          hint: StringApp.addnote,
+          hint: '8'.tr,
           onconfirm: () {
             Get.back();
           },
-          title: StringApp.note,
+          title: '23'.tr,
           widget: const Icon(
             Icons.note_alt_outlined,
             color: Appcolors.blue,

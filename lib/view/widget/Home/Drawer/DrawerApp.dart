@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:todo/Controller/Home/HomeScreenController.dart';
-import 'package:todo/Core/constant/String/String.dart';
+import 'package:todo/Core/constant/image/AppImage.dart';
 import 'package:todo/view/widget/Home/Drawer/CustomContainerAllCategory.dart';
 import 'package:todo/view/widget/Home/Drawer/CustomContainerdrawer.dart';
 
@@ -21,7 +21,7 @@ class CustomDrawerApp extends GetView<Homescreencontroller> {
             height: 200.0.h,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/Images/To DO.png'),
+                image: AssetImage(APPImage.todo),
                 fit: BoxFit.cover,
               ),
             ),
@@ -37,20 +37,22 @@ class CustomDrawerApp extends GetView<Homescreencontroller> {
                       controller.gotostartaskpage();
                     },
                     iconData: FluentIcons.star_12_filled,
-                    title: StringApp.startasks,
+                    title: '14'.tr,
                   ),
                   const CustomContainerAllCategory(),
                   CustomContainerdrawer(
                     sureicon2: false,
                     ontap: () {},
                     iconData: FluentIcons.paint_brush_12_filled,
-                    title: StringApp.theme,
+                    title: '19'.tr,
                   ),
                   CustomContainerdrawer(
                     sureicon2: false,
-                    ontap: () {},
-                    iconData: FluentIcons.settings_16_filled,
-                    title: StringApp.languages,
+                    ontap: () {
+                      controller.gotoChooselang();
+                    },
+                    iconData: FluentIcons.local_language_28_regular,
+                    title: '15'.tr,
                   ),
                 ],
               ),

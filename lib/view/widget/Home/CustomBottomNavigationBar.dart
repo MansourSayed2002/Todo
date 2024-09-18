@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:todo/Controller/Home/HomeScreenController.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
-import 'package:todo/Core/constant/String/String.dart';
 import 'package:todo/Core/constant/Textstyle/TextStyle.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
@@ -28,7 +27,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 controller.changeindex(0);
               },
               iconData: FluentIcons.task_list_add_20_filled,
-              text: StringApp.task,
+              text: '13'.tr,
               index: 0,
             ),
             CustombottomItemBar(
@@ -36,7 +35,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 controller.changeindex(1);
               },
               iconData: FluentIcons.calendar_12_regular,
-              text: StringApp.calender,
+              text: '16'.tr,
               index: 1,
             ),
             CustombottomItemBar(
@@ -44,7 +43,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 controller.changeindex(2);
               },
               iconData: FluentIcons.person_12_filled,
-              text: StringApp.mine,
+              text: '17'.tr,
               index: 2,
             ),
             DrawerButton(

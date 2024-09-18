@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo/Controller/StarTask/StarTaskController.dart';
-import 'package:todo/Core/constant/String/String.dart';
 import 'package:todo/Core/constant/Textstyle/TextStyle.dart';
 import 'package:todo/view/widget/StarTask/CustmCardStarTask.dart';
 
@@ -19,7 +18,7 @@ class StartaskView extends StatelessWidget {
             },
             icon: const Icon(Icons.arrow_back)),
         title: Text(
-          StringApp.startasks,
+          '14'.tr,
           style: TextStyleApp.black25blod,
         ),
       ),

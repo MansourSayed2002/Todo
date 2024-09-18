@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:todo/Controller/Home/HomeScreenController.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
-import 'package:todo/Core/constant/String/String.dart';
 import 'package:todo/Core/constant/Textstyle/TextStyle.dart';
 
 class CustomButtonCreate extends GetView<Homescreencontroller> {
@@ -26,7 +25,7 @@ class CustomButtonCreate extends GetView<Homescreencontroller> {
           height: 60.0.h,
           color: Appcolors.bluehorizon,
           child: Text(
-            StringApp.create,
+            '7'.tr,
             style: TextStyleApp.white20blod,
           ),
         ),

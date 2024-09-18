@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:todo/Controller/Home/HomeController.dart';
 import 'package:todo/Data/source/local/Sqflite.dart';
 import 'package:todo/view/screen/Calender/CalenderView.dart';
+import 'package:todo/view/screen/ChooseLanguage/ChooseLanguageView.dart';
 import 'package:todo/view/screen/Home/HomeView.dart';
 import 'package:todo/view/screen/StarTask/StarTaskView.dart';
 
@@ -34,6 +35,7 @@ abstract class AbsHomeScreenController extends GetxController {
   chagecheck();
   choosecat(id);
   deletecat(id);
+  gotoChooselang();
 }
 
 class Homescreencontroller extends AbsHomeScreenController {
@@ -125,6 +127,13 @@ class Homescreencontroller extends AbsHomeScreenController {
   @override
   gotostartaskpage() {
     Get.to(() => const StartaskView(),
+        transition: Transition.leftToRight,
+        duration: const Duration(milliseconds: 300));
+  }
+
+  @override
+  gotoChooselang() {
+    Get.to(() => const ChooseLanguageView(),
         transition: Transition.leftToRight,
         duration: const Duration(milliseconds: 300));
   }

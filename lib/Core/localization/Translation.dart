@@ -28,6 +28,8 @@ class Mytranslation extends Translations {
           "21": "اضافه قسم جديد",
           "22": "ادخل هنا",
           "23": "ملاحظه",
+          "24": "العربيه",
+          "25": "الانجليزيه",
         },
         "en": {
           "1":
@@ -54,6 +56,8 @@ class Mytranslation extends Translations {
           "21": "Create New Category",
           "22": "Input here",
           "23": "Note",
+          "24": "Arabic",
+          "25": "English",
         },
       };
 }

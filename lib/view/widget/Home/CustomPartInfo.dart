@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:todo/Controller/Home/HomeController.dart';
 import 'package:todo/Core/constant/Colors/Colors.dart';
-import 'package:todo/Core/constant/String/String.dart';
 import 'package:todo/Core/constant/Textstyle/TextStyle.dart';
 
 class CustomPartInfo extends StatelessWidget {
@@ -38,12 +37,12 @@ class CustomPartInfo extends StatelessWidget {
             ),
           ),
           Text(
-            StringApp.all,
+            '12'.tr,
             style: TextStyleApp.white25blod,
           ),
           GetBuilder<HomeController>(
             builder: (controller) => Text(
-              '${controller.dataTask.length} ${StringApp.task} ',
+              '${controller.dataTask.length} ${'13'.tr} ',
               style: TextStyleApp.white20blod,
             ),
           ),
